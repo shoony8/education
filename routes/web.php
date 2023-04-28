@@ -21,3 +21,7 @@ Route::get('/', function () {
         "mysql_version" => DB::select("select version()")[0]->{'version()'}
     ]);
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
